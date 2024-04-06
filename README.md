@@ -33,3 +33,9 @@ Learn more
 - [API](https://docs.sublimesecurity.com/reference/introduction)
 - [Release log](https://new.sublimesecurity.com)
 - [Message Query Language (MQL)](https://docs.sublimesecurity.com/docs/message-query-language)
+
+To start redis docker container seperately:
+
+```console
+docker run -d --net sublime-platform_net --restart unless-stopped --name sublime_redis redis:6.2 redis-server --loglevel warning
+```

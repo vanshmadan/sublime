@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    redis:
+        networks:
+            - sublime-platform_net
+        restart: unless-stopped
+        container_name: sublime_redis
+        image: redis:6.2
+        command: redis-server --loglevel warning
+networks:
+    sublime-platform_net:
+        external: true
+        name: sublime-platform_net

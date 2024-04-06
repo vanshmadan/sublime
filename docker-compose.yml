@@ -52,7 +52,6 @@ services:
       - net
     depends_on:
       - sublime_mantis
-      - sublime_redis
       - sublime_strelka_backend
       - sublime_strelka_frontend
   sublime_postgres:
@@ -81,13 +80,6 @@ services:
       MANTIS_HOST_URL: "http://sublime_mantis:8000"
     depends_on:
       - sublime_mantis
-  sublime_redis:
-    image: redis:6.2
-    restart: unless-stopped
-    container_name: sublime_redis
-    command: redis-server --loglevel warning
-    networks:
-      - net
   sublime_strelka_frontend:
     image: sublimesec/strelka-frontend:0.3
     restart: unless-stopped
